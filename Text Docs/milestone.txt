@@ -1,0 +1,86 @@
+///////////////////////////////////////////////////////////
+//  CPSC-112 CLASS PROJECT - MILESTONE.txt
+//
+//  Team Members: Ej, Maggie, Jhon, and Pranav
+//
+//  Project Title: Not-ify
+//
+///////////////////////////////////////////////////////////
+
+===========================================================
+== HIGH-LEVEL DESCRIPTION                                ==
+==                                                       ==
+== A few sentences describing your project. If your      ==
+== project has changed since your proposal, please       ==
+== address the elements you have added, changed or       ==
+== removed.                                              ==
+==                                                       ==
+== What helpful advice or feedback did you get from      ==
+== your milestone meeting this week. Has this impacted   ==
+== your plans for finishing up the project?              ==
+===========================================================
+
+Our project will be a music program that allows users to take a diagnostic test in order
+to see which type of genre of music they like. We also allow users to type in the name and 
+artist of a song and will play the song for them and show them the lyrics. Finally, for each 
+song that the user inputs, we will try and classify it into a genre based on its lyrics. 
+
+In our milestone meeting, Reese gave us some resources to use to get started with Swing and 
+some of the other aspects of our project that were very helpful. He mentioned that youtube might
+be hard to use so we changed our plans accordingly. 
+
+===========================================================
+== CODE-LEVEL DESCRIPTION                                ==
+==                                                       ==
+== Recall the code-level description you gave in the     ==
+== proposal. Describe the parts you have completed and   ==
+== list the ones you are still working on.               ==
+===========================================================
+
+Complete:
+The diagnostic test portion is complete. It can be run from our main scene program using a button listener. 
+
+The project also uses a program named JSOUP to scrape date from genius.com in order to provide
+lyrics to analyze. It then passes this onto a genre analysis that gives an estimate to the
+genre of the lyrics provided using our patented formula. This import part of the music both displays lyrics
+for the user and plays the song from youtube. 
+
+Moreover, the program utilizes a webbrowser in the background of our jframes in order to search
+youtube for the song given by the user. This in conjunction with the genius bit adds a cool
+web dynamic to the project.
+
+TODO: 
+- Creating the genre analysis based on lyrics. We hope it will be accurate (no promises)
+
+===========================================================
+== DESIGN/IMPLEMENTATION CHALLENGES                      ==
+==                                                       ==
+== What challenges have you encountered while working    ==
+== on the project so far?                                ==
+== How did you overcome them or are you still working    ==
+== on solving them?                                      ==
+===========================================================
+
+-playing YouTube audio: We put a webbrowser in the background of the program and made it invisible for the illusion of mp3 streaming
+-Playing audio with play/pause: Used a JDK media player to play .wav files
+-finding songs through Genius: Used JSOUP to scrape the HTML for the lyrics, 
+-finding videoId from scraped HTML from youtube page: Turned HTML document into txt file. Got a string from txt file based on keyword. Sorted through string to return video ID.
+
+The jury is still out on:
+
+- A problem we're still having is how to automatically close a panel after a new page is opened. 
+- We're also still working to categorize songs based on the lyrics we get from Song.java
+
+===========================================================
+== TEAM PLANNING                                         ==
+==                                                       ==
+== How many hours has your group spent on the project    ==
+== so far? How many hours do you estimate remain to      ==
+== complete your goals for the project? These numbers    ==
+== do not impact your grade, but are very helpful for    ==
+== us to know, so please answer honestly.                ==
+===========================================================
+
+I would estimate that our group this far in the project has spent 40 hours. The remaining hours that we estimate it will 
+take in order to finish all our goals would be 5 to 10 hours. 
+

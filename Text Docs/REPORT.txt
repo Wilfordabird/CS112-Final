@@ -1,0 +1,195 @@
+///////////////////////////////////////////////////////////
+//  CPSC-112 CLASS PROJECT - REPORT.txt
+//
+//  Team Members: EJ, Jhon, Maggie, and Pranav
+//  TA (who you demoed to): Reese Wynn
+//
+//  Project Title: Not-ify
+//
+//  Note: Please submit the following:
+//    (1) REPORT.txt, 
+//    (2) All that is needed to compile and run your program 
+//        (a zip file of the project directory can be a good 
+//        approach), and  
+//    (3) README.txt on how to execute your program. If it is
+//      deployed on the Web, please provide a link. 
+//
+//    Only one submission is necessary, but don't forget to 
+//    add your team members on Gradescope.
+///////////////////////////////////////////////////////////
+
+===========================================================
+== HIGH-LEVEL DESCRIPTION                                ==
+==                                                       ==
+== A few sentences describing your project. If your      ==
+== project has changed since your proposal or milestone, ==
+== please specifically address the elements you have     ==
+== added, changed or removed.                            ==
+===========================================================
+
+Our project is a music program that allows users to take a diagnostic test in order
+to see which type of genre of music they like. We also allow users to type in the name and 
+artist of a song and will play the song for them and show them the lyrics. Finally, for any 
+given song that the user inputs we will analyze its lyrics and classify it into a genre.
+
+===========================================================
+== NOVELTY                                               ==
+==                                                       ==
+== One or a few senetences identifying novelty (not done ==
+== before or not done well before) of your project.      ==
+==                                                       ==
+== Novelty will account for 30 points.                   ==
+===========================================================
+
+Our novelty is shown through our web scraping features, unique genre sorting algorithm, and 
+trendy user interface that were all pretty glossed over or not covered in class.
+I doubt anyone else as done something so novel ever. It just may be the best program 
+since sliced bread. 
+
+===========================================================
+== COMPLEXITY                                            ==
+==                                                       ==
+== One or a few senetences identifying complexity        ==
+== of your project. Complexity is relative to CS112.     ==
+== You should discuss what topics/programming techniques ==
+== covered by CS112 that you may need to use. If you     ==
+== need to use anything beyond covered by CS112, it is   ==
+== great to list.                                        == 
+==                                                       ==
+== Complexity will account for 30 points.                ==
+===========================================================
+
+This project was very hard. A few of the things that made it hard were:
+
+1. Learning how to use javafx to make a media player
+2. Using swing to make a good GUI
+3. Using Jsoup to conduct web searches
+4. Sorting through scraped HTML data to get video Id's for the youtube search
+5. Scraping genius for lyrics and their genre classification
+6. Integrating a lot of new objects into the GUI and the program itself
+
+===========================================================
+== EXECUTION                                             ==
+==                                                       ==
+== One or a few sentences identifying how your program   ==
+== will be used, i.e., easy and smooth to use.           ==
+==                                                       ==
+== Execution will account for 90 points.                 ==
+===========================================================
+
+Our program is easy and smooth to use because we have a homepage where 
+the user chooses which path they want to take. There are instructions on
+each page and there's also a home button to take you back to the 
+main screen.
+
+===========================================================
+== CODE-LEVEL DESCRIPTION                                ==
+==                                                       ==
+== Please focus on both key objects and key methods.     ==
+==                                                       ==
+===========================================================
+
+MainSceneSwing: This is the main control class that runs our entire program
+    Important Methods: - has three methods to run the three individual paths
+                       - Method completeRun() runs the entire program
+
+Song: This is a file that creates a song object and proceeds to scrape data,
+        find urls, and picks a genre for that song. It does this through a variety
+        of things but most is using jsoup libraries. 
+        Imortatnt Methods:
+            lyrics(): Scrapes genius.com for lyrics
+            youtubeSearch(): Scrapes youtube for video ID based on user search query
+            genreFinder(): Scrapes genuis metadata for genre
+
+
+YoutubePlayerSwing: Class that creates the path to run the youtube music player
+    Important Methods:
+            setUp(): Sets up initial frame
+            start(): Sets up secondary frame where the music is played in the background
+        
+
+DiagnosticTestSwing: Class that creates the path to run the diagnostic test
+    Important Methods: - Various methods to create individual parts/panels of the GUI 
+                       - readFile() uses scanner to read text from Songs.txt and parse them into arrays
+                       - setUp() creates the inital screen with instructions and a start button
+                       - start() begins running the actual diagnostic test
+                       - nextSong() changes the audio that is being played every time a button is clicked
+                       - genreCounter() is run after a song is liked to increment the corresponding genre counter
+                       - tally() is run at the end of the test to identify which genres were the most liked
+                       - results() displays the results to the user using Swing 
+
+LyricAnalysisSwing: Creates the third path that the user can choose. Lets the user input a song
+        name and outputs some predicted genres for it as well as recommended songs
+        Important Methods: - genre() runs the actual analysis of of the lyrics to classify a song into a certain category
+                           - songRecs() runs genre to find which songs we should suggest based on the input song
+
+Button Listeners: We have three classes of button listeners that we use for various stages of the program
+
+===========================================================
+== ACHIEVEMENT                                           ==
+==                                                       ==
+== What part of your project are you most proud of? Why? ==
+==                                                       ==
+===========================================================
+EJ: 
+        Playing the audio from youtube is something I'm super proud of 
+        because I initially thought that it was impossible. It took a bunch of 
+        work but the ability to scrape web pages will be super useful so I am
+        glad to say that it is in my toolkit. 
+
+
+Maggie: 
+        The lyric analyzer in LyricAnalysisSwing.java takes user input and
+        determines what genre a song is by counting the amount of popular words
+        of each genre are in the lyrics. It returns the genre with the highest amount 
+        of words and is sometimes more accurate than Genius' algorithm.
+
+Pranav:
+        I am most proud that we managed to scrape lyrics from genius and a video ID 
+        from a youtube search page. This took a lot of research (mostly done by EJ) 
+        but it was incredibly satisfying to be able to search a huge document of HTML
+        to return exacly what we needed.
+
+Jhon:
+        I am a person that loves the structure of a program, so the part I am most proud
+        of would have to be everything from the main scene and to the different panels created
+        for diagnostic, lyric analysis, and music player. Everything in the program connecting 
+        and coming overall to make a semi-music app was amazing.
+
+===========================================================
+== TEAM EFFORTS                                          ==
+==                                                       ==
+== Give an approximate number of hours spent             ==
+== brainstorming, planning and meeting for the project.  ==
+===========================================================
+
+We have been working on this project for about 50 hours. Planning and meeting 
+out of those 50 hours would be around 4-5 hours and the rest would actually be
+researching and making the code for this project.
+
+===========================================================
+== TA/PROF FEEDBACK                                      ==
+==                                                       ==
+== List the TA(s) and/or Professor(s) you met with for   ==
+== the project. Describe some of the feedback recieved   ==
+== and how you incorporated these into your project.     ==
+===========================================================
+
+We met with our beautiful passionate heck-of-a-guy TA, Reese Wynn. And, the god of coding himself, 
+Dr. Tim Barron.
+
+Tim's Feedback: Tim more or so gave us general ideas of what to do in the program (lyric analysis + diagnotic + music player) 
+which we ended up following through on. While he wasn't too stressed with specifics, I think we covered everything that 
+he hoped to see.
+
+Reese's Feeback: Orginally we coded with StdDraw, but then Reese recommeneded java.swing which made 
+whole main scene of our program easier to code and work with. Reese also recommended a new strategy for
+the differentiating songs into genres called sentiment analysis, where we determine if a song is positive,
+negative, or neutral based on lyrics. We used this idea to determine the words that are more likely to 
+appear with a certain genre.
+
+
+
+
+
+

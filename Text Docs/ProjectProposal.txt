@@ -1,0 +1,141 @@
+///////////////////////////////////////////////////////////
+//  CPSC-112 CLASS PROJECT - PROPOSAL.txt
+//
+//  Team Members: EJ Wilford (B), Jhon Escobar (A), Pranav Parakh (D),
+//  Maggie Schnyer(D)
+//
+//  Project Title: NOTify
+//
+///////////////////////////////////////////////////////////
+
+===========================================================
+== HIGH-LEVEL DESCRIPTION                                ==
+==                                                       ==
+== A few sentences describing your project. Include      ==
+== some pointers/suggestions you got from your pitch     ==
+== meeting.                                              ==
+===========================================================
+
+Our project will be a music program that allows users to input a library of songs or take a 
+diagnostic test to rate samples of music. The program will then generate a customized playlist 
+based on the results of the test or by analyzing the inputted music library. Users also have the 
+option to play a randomized playlist of any genre. 
+
+In our meeting, Sir Tim Barron suggested adding a function for users to input their own
+library files. He also suggested analyzing the inputted songs in order to categorize
+them by genre.
+
+===========================================================
+== NOVELTY                                               ==
+==                                                       ==
+== One or a few sentences identifying novelty (not done  ==
+== before or not done well before) of your project.      ==
+===========================================================
+
+It's novel in the sense that we haven't covered web based searches yet in class. We will have to
+conduct a lot of research about classifying songs by their lyrics, which is another thing we
+haven't went over. Additionally, the creation of a complex user interface will be challenging.
+
+===========================================================
+== COMPLEXITY                                            ==
+==                                                       ==
+== One or a few sentences identifying complexity         ==
+== of your project. Complexity is relative to CS112.     ==
+== You should discuss what topics/programming techniques ==
+== covered by CS112 that you may need to use. If you     ==
+== need to use anything beyond covered by CS112, it is   ==
+== great to list.                                        == 
+===========================================================
+
+In terms of complexity, our program will require a lot of research into how algorithms for making suggestions
+to a user will work. We will also have to learn how to make web searches through java to find both the lyrics 
+and audio files for the songs that the user wants to input. We will have to be able to parse through the song 
+lyrics to classify the genre of each song, which will be challenging. Finally, we will have to create a user
+interface to organize and let users play the songs of their choosing. 
+
+===========================================================
+== EXECUTION                                             ==
+==                                                       ==
+== One or a few sentences identifying how your program   ==
+== will be used.                                         ==
+===========================================================
+
+1. Initially, the user will have to choose between three separate paths to take when they start the program:
+  a. Allow users to take a diagnostic test to identify which genres they like best - Pop, Country, Rock, Classical, Rap
+  b. Allow users to input their own songs
+  c. Allow users to play songs from a randomized playlist
+
+For part a, the users will listen to a series of clips from various songs, and then will be asked to 
+rate each song on on a scale of 1 to 5. At the end, we will tell the user what genre suits them best
+and will give them a playlist that we think they would like. 
+
+For part b, we will ask the users for the titles of the songs they wish to import. We will then use 
+web searching applications to get both the lyrics and the audio file for the song. We will analyze the 
+lyrics to try and categorize the song into a genre. Based on what genre of songs that the user inputted, 
+we will suggest a playlist for them and will also allow them to play their own songs. 
+
+For part c, we will let the users choose songs from set playlists that we create.  
+
+===========================================================
+== CODE-LEVEL DESCRIPTION                                ==
+==                                                       ==
+== Please focus on both key objects and key methods.     ==
+== List the name of each .java file that you may expect  ==
+== to use in your project, one per line, and list below  ==
+== some key methods to be defined in the class. If you   ==
+== identify a non-trivial task (method), please write    ==
+== down as well.                                         ==
+==                                                       ==
+== This section is just meant to show that you've        ==
+== thought about some more details on the objects and    ==
+== methods that need to be written. We anticipate that   ==
+== your thinking will evolve in later stages.            ==
+===========================================================
+
+e.g.,
+
+- ExampleClass.java - This object stores code for explaining 
+  this example. The face recognition method is the key method
+  because and we plan to use OpenCV to bootstrap...
+
+NotSpotify.java - Runs the main program.
+
+Analyzer.java - Takes the lyrics that we find from each song and uses instances of certian keywords
+to classify each song as being in a particular genre. We will need a method that splits the lyrics 
+into an array of words. We will also have a method that compares the input array to our standard words.
+
+Song.java - Class that allows us to play different songs for different periods of time.
+This will include two constructors: the first will be used to create Song objects that are 
+used for the snippets portion of the program, and the second will create song objects for the full
+length duration.
+
+UserInterface.java - Creates the user interface that the user will see when they are using our program. 
+This will include methods to check where the user is clicking and what they are typing to skip the songs
+or type their description. We will have to create separate methods to run the output on each separate "screen". 
+For example, for each separate part of our program that the user has the potential to use, we will need a new method 
+to create that part of the user interface. 
+
+PlaylistMaker.java - Evaluates the user's ranking and responses to the sample songs and uses 
+Analyzer.java to customize a playlist.
+
+YoutubetoMp3.java - This will download the users search request into an mp3 file on their system so it can be played
+
+Queue.java- This will control the queueing and unqueueing methods.
+
+===========================================================
+== TEAM PLANNING                                         ==
+==                                                       ==
+== Give an approximate number of hours spent             ==
+== brainstorming, planning and meeting for the proposal. ==
+===========================================================
+
+4 hours
+
+===========================================================
+== PROJECT PITCH MEETING DATE/TIME                       ==
+==                                                       ==
+== Indicate who your group met with to discuss           ==
+== your project idea and in which time slot.             ==
+===========================================================
+
+Timothy Barron at 1pm on Saturday
